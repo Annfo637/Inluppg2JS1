@@ -1,0 +1,85 @@
+body {
+    background-color: lightsteelblue;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+
+.text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.textfield {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#filtertext {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.dateselect {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    width: 140px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+#addtask {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+/*.radio {
+    border: 1px solid gray;
+}*/
+
+.taskheader {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.task {
+    display: inline-block;
+    width: 240px;
+}
+.date {
+    display: inline-block;
+    width: 120px;
+}
+.category {
+    display: inline-block;
+    width: 80px;
+}
+.delete {
+    background-color: transparent;
+    border: none;
+}
+
+.expired {
+    color: red;
+}

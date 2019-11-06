@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>So much to do - so little time ⏱</h1>
+    <form id="submit">
+        <label class="text">Lägg till en uppgift:</label>
+        <br>
+        <input type="text" id="task" class="textfield">
+        <br>
+        <input type="date" id="date" class="dateselect">
+        <select id="category" class="dateselect">
+            <option value="study">Studier</option>
+            <option value="home">Hem</option>
+            <option value="pets">Husdjur</option>
+        </select>
+        <br>
+        <button id="addtask" class="text">Lägg till</button>
+        <br>
+    </form>
+    <div id="filter" class="text">
+        <label>Filtrera på:</label>
+        <br>
+        <input type="text" id="filtertext">
+        <br>
+        <input class="radio" type="radio" id="Alla" value="all" name="ctgbtn" checked> Alla
+        <input class="radio" type="radio" id="Studier" value="study" name="ctgbtn"> Studier
+        <input class="radio" type="radio" id="Hem" value="home" name="ctgbtn"> Hem
+        <input class="radio" type="radio" id="Husdjur" value="pets" name="ctgbtn"> Husdjur
+    </div>
+    <br>
+    <h2 class="taskheader">Att göra:</h2>
+    <ul id="tasklist" class="text"></ul>
+    <script type="application/javascript" src="main.js"></script>
+</body>
+</html>
