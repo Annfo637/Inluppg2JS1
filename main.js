@@ -22,7 +22,6 @@ drawList()
 function drawList(){
     tasklist.innerHTML = ''
     const filteredList = filterText(filterCat())
-    checkDate()
 
     filteredList.forEach(function(item){
         const li = document.createElement('li')
@@ -32,6 +31,9 @@ function drawList(){
         const date = document.createElement('span')
         date.textContent = item.date
         date.classList.add('date')
+        if(checkDate(item)){
+            date.classList.add('expired')
+        }
         const cat = document.createElement('span')
         cat.textContent = item.cat
         cat.classList.add('category')
@@ -67,10 +69,9 @@ function addTask(event){
         date: date.value,
         cat: mapCategory(category.value)}
 
-        console.log(newTask)
-        myTasks.push(newTask)
-    
+    myTasks.push(newTask)
     taskInput.value = ''
+    date.valueAsDate = new Date()
     drawList()    
 }
 
@@ -81,20 +82,16 @@ function mapCategory(prop){
         home: 'Hem',
         pets: 'Husdjur'
     }
-    return categories[prop]
-    
+    return categories[prop]  
 }
     
 //ta bort todo/task från listan
 function deleteTask(event){
     const taskID = parseInt(event.currentTarget.dataset.taskID)
-    console.log(taskID)
     const removedTasks = myTasks.filter(function(item){
         const itemID = item.id
-        console.log(itemID)
         return itemID !== taskID
     })
-    console.log(removedTasks)
     myTasks = removedTasks
     drawList()
 }
@@ -118,7 +115,6 @@ function filterCat(){
 //filtrera att-göra-listan på fritext, får in en array från filterCat
 function filterText(preFilteredTasks){
     const searchStr = filtertext.value.toLowerCase()
-    console.log(searchStr)
     const filteredTasks = preFilteredTasks.filter(function(item){
         return item.text.toLowerCase().includes(searchStr)
     })
@@ -126,13 +122,14 @@ function filterText(preFilteredTasks){
 }
 
 //bevaka slutdatum
-function checkDate(){
-    const d = new Date()
-    console.log(d)
-    myTasks.forEach(function(item){
-        console.log(item.date)
-        if(item.date < d){
-            item.classList.add('.expired')
-        }
-    })
+function checkDate(item){
+    const now = new Date()
+    const tomorrow = new Date(now.getFullYear(),now.getMonth(), now.getDate()+1)
+    const d = new Date(item.date)
+    if(d < tomorrow){
+       return true
+    }
+    else{
+        return false
+    }       
 }
