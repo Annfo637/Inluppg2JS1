@@ -124,9 +124,9 @@ function filterText(preFilteredTasks){
 //bevaka slutdatum
 function checkDate(item){
     const now = new Date()
-    const tomorrow = new Date(now.getFullYear(),now.getMonth(), now.getDate()+1)
+    const today = new Date(now.getFullYear(),now.getMonth(), now.getDate())
     const d = new Date(item.date)
-    if(d < tomorrow){
+    if(d < today){
        return true
     }
     else{
